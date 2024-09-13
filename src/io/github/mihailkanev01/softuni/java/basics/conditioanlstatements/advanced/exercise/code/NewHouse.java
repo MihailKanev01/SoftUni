@@ -9,8 +9,8 @@ public class NewHouse {
         int flowerCount = Integer.parseInt(scanner.nextLine());
         int budget = Integer.parseInt(scanner.nextLine());
         double priceRoses = 5;
-        double priceDahlias = 3;
-        double priceTulips = 2;
+        double priceDahlias = 3.8;
+        double priceTulips = 2.8;
         double priceNarcissus = 3;
         double priceGladiolus = 2.5;
         double totalPrice = 0;
