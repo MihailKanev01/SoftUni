@@ -1,5 +1,4 @@
-package io.github.mihailkanev01.softuni.java.basics.conditioanlstatements.advanced.exercise;
-
+package io.github.mihailkanev01.softuni.java.basics.conditioanlstatements.advanced.exercise.code;
 import java.util.Scanner;
 
 public class SummerOutfit {
