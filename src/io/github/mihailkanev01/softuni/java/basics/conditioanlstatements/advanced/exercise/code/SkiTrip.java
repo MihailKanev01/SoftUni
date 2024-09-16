@@ -1,0 +1,57 @@
+package io.github.mihailkanev01.softuni.java.basics.conditioanlstatements.advanced.exercise.code;
+
+import java.util.Scanner;
+
+public class SkiTrip {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int days = Integer.parseInt(scanner.nextLine());
+        String room = scanner.nextLine();
+        String score = scanner.nextLine();
+
+        int nights = days - 1;
+        double rentPerNight = 0;
+        double discount = 0;
+
+        switch (room) {
+            case "room for one person":
+                rentPerNight = 18.00;
+                break;
+            case "apartment":
+                rentPerNight = 25.00;
+                if (nights < 10) {
+                    discount = 0.30;
+                } else if (nights <= 15) {
+                    discount = 0.35;
+                } else {
+                    discount = 0.50;
+                }
+                break;
+            case "president apartment":
+                rentPerNight = 35.00;
+                if (nights < 10) {
+                    discount = 0.10;
+                } else if (nights <= 15) {
+                    discount = 0.15;
+                } else {
+                    discount = 0.20;
+                }
+                break;
+            default:
+                System.out.println("Invalid input");
+                return;
+        }
+
+        double totalRent = rentPerNight * nights;
+
+        totalRent = totalRent - (totalRent * discount);
+
+        if (score.equals("positive")) {
+            totalRent += totalRent * 0.25;
+        } else if (score.equals("negative")) {
+            totalRent -= totalRent * 0.1;
+        }
+
+        System.out.printf("%.2f", totalRent);
+    }
+}
