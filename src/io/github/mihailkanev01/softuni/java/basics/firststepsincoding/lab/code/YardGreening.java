@@ -1,18 +1,24 @@
 package io.github.mihailkanev01.softuni.java.basics.firststepsincoding.lab.code;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class YardGreening {
     public static void main(String[] args) {
-        try (Scanner scanner = new Scanner(System.in)) {
-            int sqM = Integer.parseInt(scanner.nextLine());
-            double price = sqM * 7.61;
-            double discount = price * 0.18;
-            double finalPrice = price - discount;
-            System.out.printf("The final price is: %.2f lv.%n", finalPrice);
-            System.out.printf("The discount is: %.2f lv.", discount);
-        } catch (NumberFormatException e) {
-            throw new RuntimeException("Invalid input for sqM. Please enter a valid number (integer).");
-        }
+        Scanner scanner = new Scanner(System.in);
+        double squareMeters = scanner.nextDouble();
+        double pricePerSqMeter = 7.61;
+
+        double totalPrice = squareMeters * pricePerSqMeter;
+
+        double discount = totalPrice * 0.18;
+
+        double finalPrice = totalPrice - discount;
+
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        System.out.println("The final price is: " + df.format(finalPrice) + " lv.");
+        System.out.println("The discount is: " + df.format(discount) + " lv.");
     }
 }
+
